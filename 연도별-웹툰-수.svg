@@ -1,0 +1,539 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [<!ENTITY nbsp "&#160;">]><svg width="1200" height="700" role="img" aria-labelledby="victory-container-1-title victory-container-1-desc" viewBox="0 0 1200 700" style="pointer-events: all; width: 100%; height: 100%;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[
+.color-picker { display: flex; height: auto; margin-top: 20px; }
+.color-picker__color { display: inline-block; position: relative; }
+.color-picker__color__block { border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 30px; left: 50%; position: absolute; top: 100%; transform: translate(-50%, 10px); z-index: 100; }
+.data-examples-display { display: flex; }
+.data-examples-display__scrollable { max-height: 600px; overflow-y: scroll; font-size: 16px; tab-size: 20; }
+.data-examples-display button { min-width: 10px; margin: 0px 0px 20px; }
+.editor-config { border-bottom: 1px solid rgba(218, 221, 228, 0.5); padding: 15px; }
+.editor-config h1, .editor-config h2, .editor-config h3, .editor-config h4, .editor-config h5, .editor-config h6 { color: rgb(60, 63, 71); }
+.editor-config__content__theme { -webkit-box-align: center; align-items: center; display: flex; padding-top: 5px; }
+.editor-config__content__theme__button { margin-right: 10px; }
+.editor-config__content__theme__description { color: rgb(60, 63, 71); font-size: 0.8em; }
+.editor-config__content__label { display: inline-block; font-size: 1em; margin-bottom: 0px; }
+.editor-config__content__label svg { float: right; margin-left: 5px; }
+.editor-config__content__form__control { margin: 10px 0px 25px; }
+.editor-config__content__form__control__group { -webkit-box-align: center; align-items: center; display: flex; -webkit-box-pack: justify; justify-content: space-between; }
+.editor-config__content__form__control__group__column { box-sizing: border-box; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; -webkit-box-flex: 0.9; flex-grow: 0.9; margin-right: 20px; }
+.editor-config__content__form__control__group__column div { margin-bottom: 20px; }
+.editor-config__content__form__control__group__column div:last-child { margin-bottom: 0px; }
+.editor-config__content__form__control:last-child { margin-bottom: 0px; }
+.editor-config:last-child { border-bottom: 0px none transparent; }
+.edit-table__controls { background-color: rgba(77, 77, 77, 0.05); border-bottom: 1px solid rgba(218, 221, 228, 0.5); margin-bottom: 10px; padding: 10px 20px; }
+.edit-table__controls__row { -webkit-box-align: center; align-items: center; display: flex; margin: auto; max-width: 1400px; -webkit-box-pack: center; justify-content: center; width: 100%; }
+.edit-table__controls__row__column { -webkit-box-align: center; align-items: center; flex-basis: 0px; -webkit-box-flex: 1; flex-grow: 1; -webkit-box-pack: center; justify-content: center; }
+.edit-table__controls__row__controls { -webkit-box-flex: 2; flex-grow: 2; text-align: center; }
+.edit-table__data { margin: auto auto 20px; max-width: 1400px; padding: 10px 20px; }
+.edit-table__data__controls { -webkit-box-align: center; align-items: center; box-sizing: border-box; display: flex; -webkit-box-pack: center; justify-content: center; margin: auto; padding: 10px; width: 100%; }
+.paste-data { display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; }
+.paste-data__status { color: rgb(255, 255, 255); font-family: "Roboto Mono", monospace; font-size: 0.8em; padding: 7px 10px; }
+.paste-data__status--error { background-color: rgba(38, 42, 51, 0.2); }
+.paste-data__status--success { background-color: rgb(255, 13, 152); }
+.paste-data__textarea { margin-bottom: 20px; }
+.paste-data__textarea .paper { width: 100%; }
+.paste-data__textarea .paper code { display: block; white-space: pre-wrap; }
+.paste-data__textarea .paper textarea { border: 0px none transparent; display: block; font-family: "Roboto Mono", monospace; font-size: 0.8em; }
+.paste-data__controls { display: flex; -webkit-box-pack: end; justify-content: flex-end; }
+.paste-data-example { border-bottom: 1px solid rgba(218, 221, 228, 0.5); }
+.paste-data-example:last-child { border-bottom: 0px none transparent; }
+.paste-data-example__controls { color: rgba(0, 0, 0, 0.65); padding-top: 20px; }
+.paste-data-example__controls button { margin-right: 10px; }
+.paste-data-example__pre-wrap { color: rgba(0, 0, 0, 0.65); }
+body { background-color: rgb(38, 42, 51); color: rgb(255, 255, 255); font-family: MetricWeb, -apple-system, BlinkMacSystemFont, Helvetica, Roboto, "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Open Sans", sans-serif; font-size: 20px; letter-spacing: 0px; margin: 0px auto; }
+span.has-annotation { color: rgb(196, 74, 103); }
+span.has-no-annotation { color: rgba(218, 221, 228, 0.5); }
+.container { background-color: rgb(60, 63, 71); display: block; margin: auto; width: 100%; }
+.container__child { box-sizing: border-box; color: rgb(255, 255, 255); margin: auto; padding: 40px 20px; width: 100%; max-width: 1400px; }
+.container__child__homepage { box-sizing: border-box; margin: auto auto 40px; width: 100%; max-width: 700px; }
+.container__child__homepage a { color: rgb(255, 255, 255); text-decoration: underline; }
+.container__child__homepage:last-child { margin-bottom: 0px; }
+.container__child__homepage__dropdown { background-color: rgb(255, 255, 255); }
+.container__child__homepage__instructions { display: flex; }
+.container--full-width { max-width: 100%; padding: 20px; }
+.VictoryContainer { height: auto !important; width: auto !important; }
+.VictoryContainer svg{float: left;}
+
+.footer { -webkit-box-align: start; align-items: flex-start; box-sizing: border-box; display: flex; font-size: 0.8em; -webkit-box-pack: end; justify-content: flex-end; margin: auto; padding: 40px 20px; width: 100%; max-width: 1400px; }
+.footer__column { flex-basis: 0px; -webkit-box-flex: 1; flex-grow: 1; }
+.footer__column__ft-logo { display: block; height: 40px; width: 40px; }
+.footer__column__ft-logo img { height: auto; width: 100%; }
+.footer__column__link { display: block; margin-bottom: 10px; }
+.footer__column__link > a { color: rgb(255, 255, 255); }
+.footer__column__link:last-child { margin-bottom: 0px; }
+hr { border-width: 1px 0px 0px; border-top-style: solid; border-top-color: rgba(218, 221, 228, 0.5); }
+.header { background-color: rgb(38, 42, 51); position: relative; z-index: 100; }
+.header__row { -webkit-box-align: center; align-items: center; box-sizing: border-box; display: flex; margin: auto; padding: 10px; width: 100%; max-width: 1400px; }
+.header__row__column { -webkit-box-align: center; align-items: center; flex-basis: 0px; -webkit-box-flex: 1; flex-grow: 1; -webkit-box-pack: justify; justify-content: space-between; }
+.header__row__column__fastcharts-logo { display: block; max-width: 175px; width: 100%; }
+.header__row__column a { color: rgb(255, 255, 255); font-weight: 700; }
+.header__row__column a:not(:last-of-type) { margin-right: 2em; }
+.header__row__column:last-child { text-align: right; }
+h1, h2, h3, h4, h5, h6 { color: rgb(255, 255, 255); cursor: default; margin: 0px 0px 20px; padding: 0px; }
+h1 { font-size: 2.2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.2em; }
+h4 { font-size: 1rem; }
+input { font-family: MetricWeb, -apple-system, BlinkMacSystemFont, Helvetica, Roboto, "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Open Sans", sans-serif; }
+input[type="range"] { appearance: none; background: rgba(218, 221, 228, 0.5); height: 5px; margin-top: 30px; outline: none; transition: opacity 0.2s ease 0s; width: 100%; }
+input[type="range"]::-webkit-slider-thumb { appearance: none; background: rgb(255, 13, 152); border-radius: 50%; cursor: pointer; height: 20px; width: 20px; }
+a { color: rgb(255, 13, 152); text-decoration: none; }
+button { border: 0px none transparent; background-color: transparent; cursor: pointer; }
+.button { background-color: rgb(255, 255, 255); border-radius: 3px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px; color: rgb(255, 13, 152); display: inline-block; font-family: MetricWeb, -apple-system, BlinkMacSystemFont, Helvetica, Roboto, "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Open Sans", sans-serif; font-size: 0.8em; margin: 0px 10px; padding: 7px 10px; }
+.button span.icon { float: left; font-size: inherit; margin-right: 7px; }
+.button span.icon svg { font-size: inherit; }
+.button--primary { background-color: rgb(255, 13, 152); color: rgb(255, 255, 255); }
+.button--large { font-size: 1.2em; padding: 8px 15px; }
+.button--cancel, .button--error { background-color: rgb(183, 28, 28); color: rgb(255, 255, 255); }
+.button--success { background-color: rgb(102, 187, 106); color: rgb(255, 255, 255); }
+.button:first-child { margin-left: 0px; }
+.button:last-child { margin-right: 0px; }
+.link { background-color: rgb(255, 255, 255); border-radius: 3px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px; color: rgb(255, 13, 152); display: inline-block; font-family: MetricWeb, -apple-system, BlinkMacSystemFont, Helvetica, Roboto, "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Open Sans", sans-serif; font-size: 0.8em; margin: 0px 10px; padding: 7px 10px; }
+.link span.icon { float: left; font-size: inherit; margin-right: 7px; }
+.link span.icon svg { font-size: inherit; }
+.link--primary { background-color: rgb(255, 13, 152); color: rgb(255, 255, 255); }
+.link--large { font-size: 1.2em; padding: 8px 15px; }
+.link--cancel, .link--error { background-color: rgb(183, 28, 28); color: rgb(255, 255, 255); }
+.link--success { background-color: rgb(102, 187, 106); color: rgb(255, 255, 255); }
+.link:first-child { margin-left: 0px; }
+.link:last-child { margin-right: 0px; }
+.paper { background-color: rgb(255, 255, 255); display: inline-block; position: relative; width: 100%; }
+.paper__status { background-image: linear-gradient(-90deg, rgb(3, 155, 229), rgb(41, 182, 246)); background-repeat: no-repeat; background-position: 0px 0px; bottom: 0px; box-sizing: border-box; color: rgb(255, 255, 255); font-family: "Roboto Mono", monospace; font-size: 0.8em; left: 0px; padding: 7px 10px; position: absolute; width: 100%; }
+.paper--with-border { background-color: transparent; border: 1px solid rgba(218, 221, 228, 0.5); }
+.paper--with-shadow { box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 30px; }
+.radio-group { display: flex; padding: 5px 0px; }
+.radio-group label { font-size: 0.7em; padding-right: 15px; white-space: nowrap; }
+.radio-group label input[type="radio"] { float: left; margin: 2px 7px 0px 0px; }
+select { background-color: rgb(255, 255, 255); border: 1px solid rgba(218, 221, 228, 0.5); border-radius: 0px; box-sizing: border-box; color: rgb(60, 63, 71); font-family: MetricWeb, -apple-system, BlinkMacSystemFont, Helvetica, Roboto, "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Open Sans", sans-serif; font-size: 1em; height: 40px; outline: 0px; padding: 0px 10px; width: 100%; }
+select:focus { animation: 0.5s ease 0s 1 normal both running selectOutlineFadeIn; }
+table { background-color: rgb(255, 255, 255); border-collapse: collapse; color: rgb(60, 63, 71); font-size: 0.7em; outline: 0px; padding: 0px; text-align: left; width: 100%; }
+table tbody, table thead { padding: 0px; }
+table tr { background-color: rgb(255, 255, 255); padding: 0px; }
+table tr:nth-child(2n) { background-color: rgb(250, 250, 250); }
+table tr td, table tr th { border-bottom: 1px solid rgba(218, 221, 228, 0.5); border-collapse: collapse; cursor: crosshair; font-size: 1.2em; padding: 0px; position: relative; white-space: pre-wrap; }
+table tr td.selected::after, table tr th.selected::after { border: 2px solid rgb(255, 13, 152); content: ""; height: calc(100% - 4px); left: 0px; position: absolute; top: 0px; width: calc(100% - 4px); }
+table tr td input[type="text"], table tr th input[type="text"] { border: 0px none transparent; box-sizing: border-box; font-size: 1em; height: 100%; left: 0px; padding: 10px; position: absolute; top: 0px; width: 100%; }
+table tr td input[type="text"]:focus, table tr th input[type="text"]:focus { animation: 0.5s ease 0s 1 normal both running textAreaOutlineFadeIn; z-index: 100; }
+table tr td span, table tr th span { -webkit-box-align: center; align-items: center; display: flex; font-size: 1em; padding: 10px; }
+table tr td textarea, table tr th textarea { border: 0px none transparent; box-sizing: border-box; font-family: MetricWeb, -apple-system, BlinkMacSystemFont, Helvetica, Roboto, "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Open Sans", sans-serif; font-size: 1em; left: 0px; padding: 10px; position: absolute; top: 0px; width: 100%; }
+table tr td textarea:focus, table tr th textarea:focus { animation: 0.5s ease 0s 1 normal both running textAreaOutlineFadeIn; z-index: 100; }
+.tabs { background-color: rgb(248, 248, 249); position: relative; }
+.tabs::before { background-color: transparent; box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 30px; content: ""; display: block; height: 28px; margin-top: -28px; position: sticky; top: 20px; width: 100%; z-index: 150; }
+.tabs__controls { background-color: rgb(218, 221, 228); overflow-x: auto; position: sticky; top: 0px; white-space: nowrap; z-index: 200; }
+.tabs__controls__tab { color: rgb(60, 63, 71); font-family: MetricWeb, -apple-system, BlinkMacSystemFont, Helvetica, Roboto, "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Open Sans", sans-serif; font-size: 0.8em; font-weight: 700; padding: 15px 20px; text-transform: capitalize; }
+.tabs__controls__tab--selected { background-color: rgb(248, 248, 249); }
+.tabs__content { padding: 10px; }
+.tabs--with-shadow { box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 30px; }
+textarea.paste-data { border: 1px solid rgba(218, 221, 228, 0.5); box-sizing: border-box; color: rgb(60, 63, 71); font-family: Roboto, sans-serif; font-size: 0.7em; outline: 0px; padding: 7px; tab-size: 5; text-align: inherit; width: 100%; }
+textarea.paste-data:focus { animation: 0.5s ease 0s 1 normal both running textAreaOutlineFadeIn; }
+.toolbar { -webkit-box-align: center; align-items: center; border-bottom: 1px solid rgba(218, 221, 228, 0.5); box-sizing: border-box; display: flex; height: auto; -webkit-box-pack: center; justify-content: center; margin-bottom: 20px; padding: 0px 10px 20px; width: 100%; z-index: 100; }
+.toolbar__label { font-weight: 600; }
+.toolbar__divider { border-right: 1px solid rgba(218, 221, 228, 0.5); height: 30px; margin-left: 20px; margin-right: 20px; width: 0px; }
+.workspace { -webkit-box-align: center; align-items: center; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; -webkit-box-pack: center; justify-content: center; margin-right: 1px; padding: 20px; position: sticky; top: 0px; }
+.jss262 { top: 0px; left: 0px; width: 100%; height: 100%; display: block; z-index: 0; position: absolute; overflow: hidden; border-radius: inherit; pointer-events: none; }
+.jss263 { top: 0px; left: 0px; width: 50px; height: 50px; opacity: 0; position: absolute; }
+.jss264 { opacity: 0.3; transform: scale(1); animation: 550ms cubic-bezier(0.4, 0, 0.2, 1) 0s 1 normal none running mui-ripple-enter; }
+.jss265 { animation-duration: 200ms; }
+.jss266 { width: 100%; height: 100%; opacity: 1; display: block; border-radius: 50%; background-color: currentcolor; }
+.jss267 { opacity: 0; animation: 550ms cubic-bezier(0.4, 0, 0.2, 1) 0s 1 normal none running mui-ripple-exit; }
+.jss268 { top: 0px; left: 0px; position: absolute; animation: 2500ms cubic-bezier(0.4, 0, 0.2, 1) 200ms infinite normal none running mui-ripple-pulsate; }
+.jss126 { color: inherit; border: 0px; margin: 0px; cursor: pointer; display: inline-flex; outline: none; padding: 0px; position: relative; align-items: center; user-select: none; border-radius: 0px; vertical-align: middle; justify-content: center; text-decoration: none; background-color: transparent; appearance: none; -webkit-tap-highlight-color: transparent; }
+.jss126.jss127 { cursor: default; pointer-events: none; }
+.jss100 { color: rgba(0, 0, 0, 0.87); padding: 6px 16px; font-size: 0.875rem; min-width: 64px; box-sizing: border-box; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; line-height: 1.75; font-weight: 500; font-family: MetricWeb, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; border-radius: 0px; text-transform: inherit; }
+.jss100:hover { text-decoration: none; background-color: rgba(0, 0, 0, 0.08); }
+.jss100.jss120 { color: rgba(0, 0, 0, 0.26); }
+.jss100:hover.jss120 { background-color: transparent; }
+.jss101 { width: 100%; display: inherit; align-items: inherit; justify-content: inherit; }
+.jss102 { padding: 6px 8px; }
+.jss103 { color: rgb(255, 13, 152); }
+.jss103:hover { background-color: rgba(255, 13, 152, 0.08); }
+.jss104 { color: rgba(255, 255, 255, 0.8); }
+.jss104:hover { background-color: rgba(255, 255, 255, 0.08); }
+.jss108 { border: 1px solid rgba(0, 0, 0, 0.23); padding: 5px 15px; }
+.jss108.jss120 { border: 1px solid rgba(0, 0, 0, 0.26); }
+.jss109 { color: rgb(255, 13, 152); border: 1px solid rgba(255, 13, 152, 0.5); }
+.jss109:hover { border: 1px solid rgb(255, 13, 152); background-color: rgba(255, 13, 152, 0.08); }
+.jss110 { color: rgba(255, 255, 255, 0.8); border: 1px solid rgba(255, 255, 255, 0.8); background-color: rgba(38, 42, 51, 0.2); }
+.jss110:hover { border: 1px solid rgba(255, 255, 255, 0.8); background-color: rgba(255, 255, 255, 0.08); }
+.jss110.jss120 { border: 1px solid rgba(0, 0, 0, 0.26); }
+.jss111 { color: rgba(0, 0, 0, 0.87); box-shadow: transparent 0px 0px 0px; padding-left: 15px; padding-right: 15px; background-color: rgb(224, 224, 224); }
+.jss111.jss119 { box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px; }
+.jss111:active { box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px; }
+.jss111.jss120 { color: rgba(0, 0, 0, 0.26); box-shadow: none; background-color: rgba(0, 0, 0, 0.12); }
+.jss111:hover { background-color: rgb(213, 213, 213); }
+.jss111:hover.jss120 { background-color: rgba(0, 0, 0, 0.12); }
+.jss112 { color: rgb(255, 255, 255); background-color: rgb(255, 13, 152); }
+.jss112:hover { background-color: rgb(178, 9, 106); }
+.jss113 { color: rgba(0, 0, 0, 0.87); background-color: rgba(255, 255, 255, 0.8); }
+.jss113:hover { background-color: rgba(178, 178, 178, 0.8); }
+.jss117 { width: 56px; height: 56px; padding: 0px; min-width: 0px; box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px; border-radius: 50%; }
+.jss117:active { box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 8px -4px, rgba(0, 0, 0, 0.14) 0px 12px 17px 2px, rgba(0, 0, 0, 0.12) 0px 5px 22px 4px; }
+.jss118 { width: auto; height: 48px; padding: 0px 16px; min-width: 48px; border-radius: 24px; }
+.jss121 { color: inherit; border-color: currentcolor; }
+.jss122 { width: 40px; height: 40px; }
+.jss123 { padding: 4px 8px; min-width: 64px; font-size: 0.8125rem; }
+.jss124 { padding: 8px 24px; font-size: 1em; }
+.jss125 { width: 100%; }
+.jss129 { fill: currentcolor; width: 1em; height: 1em; display: inline-block; font-size: 24px; transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; user-select: none; flex-shrink: 0; }
+.jss130 { color: rgb(255, 13, 152); }
+.jss131 { color: rgba(255, 255, 255, 0.8); }
+.jss132 { color: rgba(0, 0, 0, 0.54); }
+.jss133 { color: rgb(244, 67, 54); }
+.jss134 { color: rgba(0, 0, 0, 0.26); }
+.jss135 { font-size: inherit; }
+.jss136 { font-size: 20px; }
+.jss137 { font-size: 35px; }
+.jss199 { inset: 0px; z-index: 1300; position: fixed; }
+.jss200 { visibility: hidden; }
+.jss244 { flex: 0 0 auto; }
+.jss245 { top: 0px; flex: 1 0 auto; height: 100%; display: flex; z-index: 1200; outline: none; position: fixed; overflow-y: auto; flex-direction: column; }
+.jss246 { left: 0px; right: auto; }
+.jss247 { left: auto; right: 0px; }
+.jss248 { inset: 0px 0px auto; height: auto; max-height: 100%; }
+.jss249 { inset: auto 0px 0px; height: auto; max-height: 100%; }
+.jss250 { border-right: 1px solid rgba(0, 0, 0, 0.12); }
+.jss251 { border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+.jss252 { border-left: 1px solid rgba(0, 0, 0, 0.12); }
+.jss253 { border-top: 1px solid rgba(0, 0, 0, 0.12); }
+.jss3 { width: 100%; display: flex; flex-wrap: wrap; box-sizing: border-box; }
+.jss4 { margin: 0px; box-sizing: border-box; }
+.jss5 { min-width: 0px; }
+.jss6 { flex-direction: column; }
+.jss7 { flex-direction: column-reverse; }
+.jss8 { flex-direction: row-reverse; }
+.jss9 { flex-wrap: nowrap; }
+.jss10 { flex-wrap: wrap-reverse; }
+.jss11 { align-items: center; }
+.jss12 { align-items: flex-start; }
+.jss13 { align-items: flex-end; }
+.jss14 { align-items: baseline; }
+.jss15 { align-content: center; }
+.jss16 { align-content: flex-start; }
+.jss17 { align-content: flex-end; }
+.jss18 { align-content: space-between; }
+.jss19 { align-content: space-around; }
+.jss20 { justify-content: center; }
+.jss21 { justify-content: flex-end; }
+.jss22 { justify-content: space-between; }
+.jss23 { justify-content: space-around; }
+.jss24 { justify-content: space-evenly; }
+.jss25 { width: calc(100% + 8px); margin: -4px; }
+.jss25 > .jss4 { padding: 4px; }
+.jss26 { width: calc(100% + 16px); margin: -8px; }
+.jss26 > .jss4 { padding: 8px; }
+.jss27 { width: calc(100% + 24px); margin: -12px; }
+.jss27 > .jss4 { padding: 12px; }
+.jss28 { width: calc(100% + 32px); margin: -16px; }
+.jss28 > .jss4 { padding: 16px; }
+.jss29 { width: calc(100% + 40px); margin: -20px; }
+.jss29 > .jss4 { padding: 20px; }
+.jss30 { flex-grow: 0; max-width: none; flex-basis: auto; }
+.jss31 { flex-grow: 1; max-width: 100%; flex-basis: 0px; }
+.jss32 { flex-grow: 0; max-width: 8.33333%; flex-basis: 8.33333%; }
+.jss33 { flex-grow: 0; max-width: 16.6667%; flex-basis: 16.6667%; }
+.jss34 { flex-grow: 0; max-width: 25%; flex-basis: 25%; }
+.jss35 { flex-grow: 0; max-width: 33.3333%; flex-basis: 33.3333%; }
+.jss36 { flex-grow: 0; max-width: 41.6667%; flex-basis: 41.6667%; }
+.jss37 { flex-grow: 0; max-width: 50%; flex-basis: 50%; }
+.jss38 { flex-grow: 0; max-width: 58.3333%; flex-basis: 58.3333%; }
+.jss39 { flex-grow: 0; max-width: 66.6667%; flex-basis: 66.6667%; }
+.jss40 { flex-grow: 0; max-width: 75%; flex-basis: 75%; }
+.jss41 { flex-grow: 0; max-width: 83.3333%; flex-basis: 83.3333%; }
+.jss42 { flex-grow: 0; max-width: 91.6667%; flex-basis: 91.6667%; }
+.jss43 { flex-grow: 0; max-width: 100%; flex-basis: 100%; }
+.jss255 { left: 0px; right: 0px; z-index: 1400; display: flex; position: fixed; align-items: center; justify-content: center; }
+.jss256 { top: 0px; }
+.jss257 { bottom: 0px; }
+.jss258 { top: 0px; justify-content: flex-end; }
+.jss259 { bottom: 0px; justify-content: flex-end; }
+.jss260 { top: 0px; justify-content: flex-start; }
+.jss261 { bottom: 0px; justify-content: flex-start; }
+.jss575 { margin-right: 5px; }
+.jss230 { display: flex; align-items: center; justify-content: center; }
+.jss231 { overflow: hidden auto; }
+.jss232 { height: 100%; outline: none; }
+.jss233 { margin: 48px; display: flex; position: relative; overflow-y: auto; flex-direction: column; }
+.jss234 { flex: 0 1 auto; max-height: calc(100% - 96px); }
+.jss235 { margin: 48px auto; }
+.jss236 { max-width: 360px; }
+.jss237 { max-width: 600px; }
+.jss238 { max-width: 960px; }
+.jss239 { max-width: 1280px; }
+.jss240 { max-width: 1920px; }
+.jss241 { width: 100%; }
+.jss242 { width: 100%; margin: 0px; height: 100%; max-width: 100%; max-height: none; border-radius: 0px; }
+.jss242.jss235 { margin: 0px; }
+.jss220 { flex: 0 0 auto; color: rgba(0, 0, 0, 0.54); padding: 12px; overflow: visible; font-size: 1.5rem; text-align: center; transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; border-radius: 50%; }
+.jss220:hover { background-color: rgba(0, 0, 0, 0.08); }
+.jss220.jss224 { color: rgba(0, 0, 0, 0.26); }
+.jss220:hover.jss224 { background-color: transparent; }
+.jss221 { color: inherit; }
+.jss222 { color: rgb(255, 13, 152); }
+.jss222:hover { background-color: rgba(255, 13, 152, 0.08); }
+.jss223 { color: rgba(255, 255, 255, 0.8); }
+.jss223:hover { background-color: rgba(255, 255, 255, 0.08); }
+.jss225 { width: 100%; display: flex; align-items: inherit; justify-content: inherit; }
+.jss180 { color: rgba(0, 0, 0, 0.87); cursor: text; display: inline-flex; font-size: 1rem; font-family: MetricWeb, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; line-height: 1.1875em; align-items: center; }
+.jss180.jss183 { color: rgba(0, 0, 0, 0.38); cursor: default; }
+.jss188 { padding: 6px 0px 7px; }
+.jss189 { width: 100%; }
+.jss190 { font: inherit; color: currentcolor; width: 100%; border: 0px; margin: 0px; padding: 6px 0px 7px; display: block; min-width: 0px; box-sizing: content-box; background: none; -webkit-tap-highlight-color: transparent; }
+.jss190::-webkit-input-placeholder { color: currentcolor; opacity: 0.42; transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; }
+.jss190:focus { outline: 0px; }
+.jss190:invalid { box-shadow: none; }
+.jss190::-webkit-search-decoration { appearance: none; }
+.jss190.jss183 { opacity: 1; }
+label[data-shrink="false"] + .jss181 .jss190::-webkit-input-placeholder { opacity: 0; }
+label[data-shrink="false"] + .jss181 .jss190:focus::-webkit-input-placeholder { opacity: 0.42; }
+.jss191 { padding-top: 3px; }
+.jss192 { resize: none; padding: 0px; }
+.jss193 { height: 1.1875em; }
+.jss194 { appearance: textfield; }
+.jss167 { padding: 0px; position: relative; }
+label + .jss168 { margin-top: 16px; }
+.jss171::after { left: 0px; right: 0px; bottom: 0px; content: ""; position: absolute; transform: scaleX(0); transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms; border-bottom: 2px solid rgb(178, 9, 106); pointer-events: none; }
+.jss171.jss169::after { transform: scaleX(1); }
+.jss171.jss172::after { transform: scaleX(1); border-bottom-color: rgb(244, 67, 54); }
+.jss171::before { left: 0px; right: 0px; bottom: 0px; content: " "; z-index: 1; position: absolute; transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; border-bottom: 1px solid rgba(0, 0, 0, 0.42); pointer-events: none; }
+.jss171:hover:not(.jss170):not(.jss169):not(.jss172)::before { border-bottom: 2px solid rgba(0, 0, 0, 0.87); }
+.jss171.jss170::before { border-bottom-style: dotted; }
+.jss175 { color: rgb(255, 13, 152); padding: 10px; background-color: rgb(255, 255, 255); }
+.jss153 { color: rgb(60, 63, 71); padding: 0px; font-size: 1em; font-family: MetricWeb, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; line-height: 1; white-space: nowrap; }
+.jss153.jss154 { color: rgb(178, 9, 106); }
+.jss153.jss155 { color: rgba(0, 0, 0, 0.38); }
+.jss153.jss156 { color: rgb(244, 67, 54); }
+.jss159.jss156 { color: rgb(244, 67, 54); }
+.jss142 { transform-origin: left top; }
+.jss147 { top: 0px; left: 0px; position: absolute; transform: translate(0px, 24px) scale(1); }
+.jss148 { transform: translate(0px, 21px) scale(1); }
+.jss149 { transform: translate(0px, 1.5px) scale(0.75); transform-origin: left top; }
+.jss150 { transform: translate(0px, 1.5px) scale(0.75); transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms; }
+.jss151 { z-index: 1; transform: translate(12px, 20px) scale(1); pointer-events: none; }
+.jss151.jss148 { transform: translate(12px, 17px) scale(1); }
+.jss151.jss149 { transform: translate(12px, 10px) scale(0.75); }
+.jss151.jss149.jss148 { transform: translate(12px, 7px) scale(0.75); }
+.jss152 { z-index: 1; transform: translate(14px, 20px) scale(1); pointer-events: none; }
+.jss152.jss148 { transform: translate(14px, 17px) scale(1); }
+.jss152.jss149 { transform: translate(14px, -6px) scale(0.75); }
+.jss138 { margin: 0px; border: 0px; display: inline-flex; padding: 5px 0px 0px; position: relative; min-width: 0px; flex-direction: column; vertical-align: top; }
+.jss139 { margin-top: 0px; margin-bottom: 0px; }
+.jss140 { margin-top: 8px; margin-bottom: 4px; }
+.jss141 { width: 100%; margin-bottom: 0px; }
+.jss198 { outline: none; position: absolute; min-width: 16px; max-width: calc(100% - 32px); overflow: hidden auto; min-height: 16px; max-height: calc(100% - 32px); }
+.jss197 { max-height: calc(100% - 96px); }
+.jss160 { width: 100%; position: relative; }
+.jss161 { width: calc(100% - 32px); color: rgb(255, 13, 152); height: 1.1875em; cursor: pointer; min-width: 16px; user-select: none; padding: 10px 32px 10px 10px; border-radius: 0px; background-color: rgb(255, 255, 255); appearance: none; }
+.jss161:focus { border-radius: 0px; background-color: rgba(0, 0, 0, 0.05); }
+.jss161.jss165 { cursor: default; }
+.jss161[multiple] { height: auto; }
+.jss161:not([multiple]) option, .jss161:not([multiple]) optgroup { background-color: rgb(255, 255, 255); }
+.jss162 { width: calc(100% - 44px); }
+.jss163 { width: calc(100% - 46px); border-radius: 4px; }
+.jss164 { width: auto; height: auto; overflow: hidden; min-height: 1.1875em; white-space: nowrap; text-overflow: ellipsis; }
+.jss166 { top: calc(50% - 12px); right: 0px; color: rgb(255, 13, 152); position: absolute; pointer-events: none; }
+.jss226 { color: rgb(213, 0, 0); margin-left: 20px; }
+.jss227 { color: rgb(213, 0, 0); margin-right: 20px; }
+.jss228 { margin-top: 0px; }
+.jss216 { display: inline-flex; transition: none 0s ease 0s; align-items: center; }
+.jss216:hover { background-color: transparent; }
+.jss219 { top: 0px; left: 0px; width: 100%; cursor: inherit; height: 100%; margin: 0px; opacity: 0; padding: 0px; position: absolute; }
+.jss207 { width: 62px; display: inline-flex; z-index: 0; position: relative; flex-shrink: 0; vertical-align: middle; }
+.jss208 { width: 20px; height: 20px; box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 2px 1px -1px; border-radius: 50%; background-color: currentcolor; }
+.jss209 { box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 5px 0px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 3px 1px -2px; }
+.jss210 { width: 48px; color: rgb(250, 250, 250); height: 48px; padding: 0px; transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; }
+.jss211 { transform: translateX(14px); }
+.jss211 + .jss215 { opacity: 0.5; }
+.jss212.jss211 { color: rgb(255, 13, 152); }
+.jss212.jss211 + .jss215 { background-color: rgb(255, 13, 152); }
+.jss213.jss211 { color: rgba(255, 255, 255, 0.8); }
+.jss213.jss211 + .jss215 { background-color: rgba(255, 255, 255, 0.8); }
+.jss214 + .jss215 { opacity: 0.12; }
+.jss214 .jss208 { box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 2px 1px -1px; }
+.jss214.jss210 { color: rgb(189, 189, 189); }
+.jss214.jss210 + .jss215 { background-color: rgb(0, 0, 0); }
+.jss215 { top: 50%; left: 50%; width: 34px; height: 14px; display: block; z-index: -1; opacity: 0.38; position: absolute; margin-top: -7px; transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; margin-left: -17px; border-radius: 7px; background-color: rgb(0, 0, 0); }
+.jss573 { margin-right: 10px; }
+.jss574 { margin-right: 5px; }
+.jss576 { width: 100%; }
+.jss1 { margin-left: 15px; }
+.jss2 { margin-right: 10px; }
+]]></style></defs><g class=""><rect fill="#ffffff" height="700" width="1200" x="0" y="0"></rect></g><g class=""><text direction="inherit" x="20" dx="0" y="30" dy="25.65"><tspan x="20" dx="0" text-anchor="start" style="font-size: 30px; font-weight: 700; fill: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; stroke: transparent;">연도별 웹툰 수</tspan></text></g><g class=""><text direction="inherit" x="20" dx="0" y="71.828125" dy="15.39"><tspan x="20" dx="0" text-anchor="start" style="font-size: 18px; font-weight: 400; fill: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; stroke: transparent;">-네이버 웹툰을 중심으로-</tspan></text></g><svg x="20" y="100.75"><rect x="0" y="100.75" width="72.96908881199539" height="21.700000000000003" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="fill: none;"></rect><path d="M 2.128, 11.872
+      h9.744
+      v-9.744
+      h-9.744
+      z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40);"></path><text direction="inherit" x="16.8" dx="0" y="7" dy="4.97"><tspan x="16.8" dx="0" text-anchor="start" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">count</tspan></text></svg><g><g role="presentation"><line x1="53.53125" x2="53.53125" y1="142.4499969482422" y2="596" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: black; stroke-width: 0;"></line><g role="presentation"><line x1="53.53125" x2="53.53125" y1="596" y2="596" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: black; size: 0px;"></line><text direction="inherit" class="y-axis" x="48.53125" dx="0" y="596" dy="4.97"><tspan x="48.53125" dx="0" text-anchor="end" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">0</tspan></text></g><g role="presentation"><line type="line" index="1" scale="[object Object]" dimension="x" range="[object Object]" x1="53.53125" y1="520.3814205136096" x2="1180" y2="520.3814205136096" datum="100" id="chart-group-4-axis-0-grid-1" style="stroke: rgb(199, 199, 199); stroke-dasharray: none; stroke-opacity: 0.7; stroke-width: 1;"></line><line x1="53.53125" x2="53.53125" y1="520.3814205136096" y2="520.3814205136096" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: black; size: 0px;"></line><text direction="inherit" class="y-axis" x="48.53125" dx="0" y="520.3814205136096" dy="4.97"><tspan x="48.53125" dx="0" text-anchor="end" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">100</tspan></text></g><g role="presentation"><line type="line" index="2" scale="[object Object]" dimension="x" range="[object Object]" x1="53.53125" y1="444.7628410272192" x2="1180" y2="444.7628410272192" datum="200" id="chart-group-4-axis-0-grid-2" style="stroke: rgb(199, 199, 199); stroke-dasharray: none; stroke-opacity: 0.7; stroke-width: 1;"></line><line x1="53.53125" x2="53.53125" y1="444.7628410272192" y2="444.7628410272192" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: black; size: 0px;"></line><text direction="inherit" class="y-axis" x="48.53125" dx="0" y="444.7628410272192" dy="4.97"><tspan x="48.53125" dx="0" text-anchor="end" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">200</tspan></text></g><g role="presentation"><line type="line" index="3" scale="[object Object]" dimension="x" range="[object Object]" x1="53.53125" y1="369.1442615408289" x2="1180" y2="369.1442615408289" datum="300" id="chart-group-4-axis-0-grid-3" style="stroke: rgb(199, 199, 199); stroke-dasharray: none; stroke-opacity: 0.7; stroke-width: 1;"></line><line x1="53.53125" x2="53.53125" y1="369.1442615408289" y2="369.1442615408289" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: black; size: 0px;"></line><text direction="inherit" class="y-axis" x="48.53125" dx="0" y="369.1442615408289" dy="4.97"><tspan x="48.53125" dx="0" text-anchor="end" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">300</tspan></text></g><g role="presentation"><line type="line" index="4" scale="[object Object]" dimension="x" range="[object Object]" x1="53.53125" y1="293.52568205443845" x2="1180" y2="293.52568205443845" datum="400" id="chart-group-4-axis-0-grid-4" style="stroke: rgb(199, 199, 199); stroke-dasharray: none; stroke-opacity: 0.7; stroke-width: 1;"></line><line x1="53.53125" x2="53.53125" y1="293.52568205443845" y2="293.52568205443845" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: black; size: 0px;"></line><text direction="inherit" class="y-axis" x="48.53125" dx="0" y="293.52568205443845" dy="4.97"><tspan x="48.53125" dx="0" text-anchor="end" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">400</tspan></text></g><g role="presentation"><line type="line" index="5" scale="[object Object]" dimension="x" range="[object Object]" x1="53.53125" y1="217.90710256804812" x2="1180" y2="217.90710256804812" datum="500" id="chart-group-4-axis-0-grid-5" style="stroke: rgb(199, 199, 199); stroke-dasharray: none; stroke-opacity: 0.7; stroke-width: 1;"></line><line x1="53.53125" x2="53.53125" y1="217.90710256804812" y2="217.90710256804812" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: black; size: 0px;"></line><text direction="inherit" class="y-axis" x="48.53125" dx="0" y="217.90710256804812" dy="4.97"><tspan x="48.53125" dx="0" text-anchor="end" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">500</tspan></text></g></g></g><g></g><g><g role="presentation"><path d="M 72.68014296417388, 596 
+A 0 0 0 0 1, 72.68014296417388, 596 
+L 72.68014296417388, 594.4535480050232 
+A 0 0 0 0 1, 72.68014296417388, 594.4535480050232 
+L 129.68014296417388, 594.4535480050232 
+A 0 0 0 0 1, 129.68014296417388, 594.4535480050232 
+L 129.68014296417388, 596 
+A 0 0 0 0 1, 129.68014296417388, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 141.3872261857408, 596 
+A 0 0 0 0 1, 141.3872261857408, 596 
+L 141.3872261857408, 589.0409660226045 
+A 0 0 0 0 1, 141.3872261857408, 589.0409660226045 
+L 198.3872261857408, 589.0409660226045 
+A 0 0 0 0 1, 198.3872261857408, 589.0409660226045 
+L 198.3872261857408, 596 
+A 0 0 0 0 1, 198.3872261857408, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 210.0943094073077, 596 
+A 0 0 0 0 1, 210.0943094073077, 596 
+L 210.0943094073077, 577.4425760602786 
+A 0 0 0 0 1, 210.0943094073077, 577.4425760602786 
+L 267.0943094073077, 577.4425760602786 
+A 0 0 0 0 1, 267.0943094073077, 577.4425760602786 
+L 267.0943094073077, 596 
+A 0 0 0 0 1, 267.0943094073077, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 278.8013926288746, 596 
+A 0 0 0 0 1, 278.8013926288746, 596 
+L 278.8013926288746, 553.4725701381386 
+A 0 0 0 0 1, 278.8013926288746, 553.4725701381386 
+L 335.8013926288746, 553.4725701381386 
+A 0 0 0 0 1, 335.8013926288746, 553.4725701381386 
+L 335.8013926288746, 596 
+A 0 0 0 0 1, 335.8013926288746, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 347.6967144346102, 596 
+A 0 0 0 0 1, 347.6967144346102, 596 
+L 347.6967144346102, 533.3686942034406 
+A 0 0 0 0 1, 347.6967144346102, 533.3686942034406 
+L 404.6967144346102, 533.3686942034406 
+A 0 0 0 0 1, 404.6967144346102, 533.3686942034406 
+L 404.6967144346102, 596 
+A 0 0 0 0 1, 404.6967144346102, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 416.4037976561771, 596 
+A 0 0 0 0 1, 416.4037976561771, 596 
+L 416.4037976561771, 510.17191427878885 
+A 0 0 0 0 1, 416.4037976561771, 510.17191427878885 
+L 473.4037976561771, 510.17191427878885 
+A 0 0 0 0 1, 473.4037976561771, 510.17191427878885 
+L 473.4037976561771, 596 
+A 0 0 0 0 1, 473.4037976561771, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 485.11088087774397, 596 
+A 0 0 0 0 1, 485.11088087774397, 596 
+L 485.11088087774397, 483.1090043666952 
+A 0 0 0 0 1, 485.11088087774397, 483.1090043666952 
+L 542.110880877744, 483.1090043666952 
+A 0 0 0 0 1, 542.110880877744, 483.1090043666952 
+L 542.110880877744, 596 
+A 0 0 0 0 1, 542.110880877744, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 553.8179640993109, 596 
+A 0 0 0 0 1, 553.8179640993109, 596 
+L 553.8179640993109, 466.871258419439 
+A 0 0 0 0 1, 553.8179640993109, 466.871258419439 
+L 610.8179640993109, 466.871258419439 
+A 0 0 0 0 1, 610.8179640993109, 466.871258419439 
+L 610.8179640993109, 596 
+A 0 0 0 0 1, 610.8179640993109, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 622.7132859050465, 596 
+A 0 0 0 0 1, 622.7132859050465, 596 
+L 622.7132859050465, 456.04609445460153 
+A 0 0 0 0 1, 622.7132859050465, 456.04609445460153 
+L 679.7132859050465, 456.04609445460153 
+A 0 0 0 0 1, 679.7132859050465, 456.04609445460153 
+L 679.7132859050465, 596 
+A 0 0 0 0 1, 679.7132859050465, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 691.4203691266133, 596 
+A 0 0 0 0 1, 691.4203691266133, 596 
+L 691.4203691266133, 439.80834850734544 
+A 0 0 0 0 1, 691.4203691266133, 439.80834850734544 
+L 748.4203691266133, 439.80834850734544 
+A 0 0 0 0 1, 748.4203691266133, 439.80834850734544 
+L 748.4203691266133, 596 
+A 0 0 0 0 1, 748.4203691266133, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 760.1274523481803, 596 
+A 0 0 0 0 1, 760.1274523481803, 596 
+L 760.1274523481803, 419.7044725726474 
+A 0 0 0 0 1, 760.1274523481803, 419.7044725726474 
+L 817.1274523481803, 419.7044725726474 
+A 0 0 0 0 1, 817.1274523481803, 419.7044725726474 
+L 817.1274523481803, 596 
+A 0 0 0 0 1, 817.1274523481803, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 828.8384572069173, 596 
+A 0 0 0 0 1, 828.8384572069173, 596 
+L 828.8384572069173, 428.98318454250796 
+A 0 0 0 0 1, 828.8384572069173, 428.98318454250796 
+L 885.8384572069173, 428.98318454250796 
+A 0 0 0 0 1, 885.8384572069173, 428.98318454250796 
+L 885.8384572069173, 596 
+A 0 0 0 0 1, 885.8384572069173, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 897.7337790126529, 596 
+A 0 0 0 0 1, 897.7337790126529, 596 
+L 897.7337790126529, 423.57060256008924 
+A 0 0 0 0 1, 897.7337790126529, 423.57060256008924 
+L 954.7337790126529, 423.57060256008924 
+A 0 0 0 0 1, 954.7337790126529, 423.57060256008924 
+L 954.7337790126529, 596 
+A 0 0 0 0 1, 954.7337790126529, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 966.4408622342198, 596 
+A 0 0 0 0 1, 966.4408622342198, 596 
+L 966.4408622342198, 371.7644607283672 
+A 0 0 0 0 1, 966.4408622342198, 371.7644607283672 
+L 1023.4408622342198, 371.7644607283672 
+A 0 0 0 0 1, 1023.4408622342198, 371.7644607283672 
+L 1023.4408622342198, 596 
+A 0 0 0 0 1, 1023.4408622342198, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 1035.1440238186167, 596 
+A 0 0 0 0 1, 1035.1440238186167, 596 
+L 1035.1440238186167, 274.33798504483013 
+A 0 0 0 0 1, 1035.1440238186167, 274.33798504483013 
+L 1092.1440238186167, 274.33798504483013 
+A 0 0 0 0 1, 1092.1440238186167, 274.33798504483013 
+L 1092.1440238186167, 596 
+A 0 0 0 0 1, 1092.1440238186167, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path><path d="M 1103.8511070401835, 596 
+A 0 0 0 0 1, 1103.8511070401835, 596 
+L 1103.8511070401835, 162.22021540901378 
+A 0 0 0 0 1, 1103.8511070401835, 162.22021540901378 
+L 1160.8511070401835, 162.22021540901378 
+A 0 0 0 0 1, 1160.8511070401835, 162.22021540901378 
+L 1160.8511070401835, 596 
+A 0 0 0 0 1, 1160.8511070401835, 596 
+ z" role="presentation" shape-rendering="auto" style="fill: rgb(214, 39, 40); stroke: rgb(214, 39, 40); width: 31px; stroke-width: 0;"></path></g></g><g><g class="zero-line-container" clip-path="url(#victory-clip-11)" style="height: 100%; width: 100%; user-select: none;"><defs><clipPath id="victory-clip-11"><rect x="53.53125" y="142.4499969482422" width="1126.46875" height="453.5500030517578" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke"></rect></clipPath></defs><path d="M63.52815369265488,596L1170.003096309485,596" role="presentation" shape-rendering="auto" style="fill: none; stroke: rgb(51, 51, 51); stroke-width: 1; width: 141px; stroke-linecap: round; stroke-linejoin: round;" vector-effect="non-scaling-stroke"></path></g></g><g><g role="presentation"><line x1="53.53125" x2="1180" y1="596" y2="596" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: rgb(51, 51, 51); fill: none; stroke-width: 1;"></line><g role="presentation"><line x1="110.33132165296429" x2="110.33132165296429" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="0" scale="[object Object]" x1="110.33132165296429" y1="596" x2="110.33132165296429" y2="606" datum="Sat Jan 01 2005 00:00:00 GMT+0900 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-0" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="110.33132165296429" dx="0" y="611" dy="11.969999999999999"><tspan x="110.33132165296429" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2005</tspan></text></g><g role="presentation"><line x1="177.818915929284" x2="177.818915929284" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="1" scale="[object Object]" x1="177.818915929284" y1="596" x2="177.818915929284" y2="606" datum="Sun Jan 01 2006 00:00:00 GMT+0900 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-1" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="177.818915929284" dx="0" y="611" dy="11.969999999999999"><tspan x="177.818915929284" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2006</tspan></text></g><g role="presentation"><line x1="245.3065102056037" x2="245.3065102056037" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="2" scale="[object Object]" x1="245.3065102056037" y1="596" x2="245.3065102056037" y2="606" datum="Mon Jan 01 2007 00:00:00 GMT+0900 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-2" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="245.3065102056037" dx="0" y="611" dy="11.969999999999999"><tspan x="245.3065102056037" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2007</tspan></text></g><g role="presentation"><line x1="312.7941044819234" x2="312.7941044819234" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="3" scale="[object Object]" x1="312.7941044819234" y1="596" x2="312.7941044819234" y2="606" datum="Tue Jan 01 2008 00:00:00 GMT+0900 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-3" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="312.7941044819234" dx="0" y="611" dy="11.969999999999999"><tspan x="312.7941044819234" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2008</tspan></text></g><g role="presentation"><line x1="380.4665962768084" x2="380.4665962768084" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="4" scale="[object Object]" x1="380.4665962768084" y1="596" x2="380.4665962768084" y2="606" datum="Thu Jan 01 2009 00:00:00 GMT+0900 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-4" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="380.4665962768084" dx="0" y="611" dy="11.969999999999999"><tspan x="380.4665962768084" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2009</tspan></text></g><g role="presentation"><line x1="447.9541905531281" x2="447.9541905531281" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="5" scale="[object Object]" x1="447.9541905531281" y1="596" x2="447.9541905531281" y2="606" datum="Fri Jan 01 2010 00:00:00 GMT+0900 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-5" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="447.9541905531281" dx="0" y="611" dy="11.969999999999999"><tspan x="447.9541905531281" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2010</tspan></text></g><g role="presentation"><line x1="515.4417848294478" x2="515.4417848294478" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="6" scale="[object Object]" x1="515.4417848294478" y1="596" x2="515.4417848294478" y2="606" datum="Sat Jan 01 2011 00:00:00 GMT+0900 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-6" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="515.4417848294478" dx="0" y="611" dy="11.969999999999999"><tspan x="515.4417848294478" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2011</tspan></text></g><g role="presentation"><line x1="582.9293791057676" x2="582.9293791057676" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="7" scale="[object Object]" x1="582.9293791057676" y1="596" x2="582.9293791057676" y2="606" datum="Sun Jan 01 2012 00:00:00 GMT+0900 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-7" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="582.9293791057676" dx="0" y="611" dy="11.969999999999999"><tspan x="582.9293791057676" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2012</tspan></text></g><g role="presentation"><line x1="650.6018709006526" x2="650.6018709006526" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="8" scale="[object Object]" x1="650.6018709006526" y1="596" x2="650.6018709006526" y2="606" datum="Tue Jan 01 2013 00:00:00 GMT+0900 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-8" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="650.6018709006526" dx="0" y="611" dy="11.969999999999999"><tspan x="650.6018709006526" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2013</tspan></text></g><g role="presentation"><line x1="718.0894651769722" x2="718.0894651769722" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="9" scale="[object Object]" x1="718.0894651769722" y1="596" x2="718.0894651769722" y2="606" datum="Wed Jan 01 2014 00:00:00 GMT+0900 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-9" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="718.0894651769722" dx="0" y="611" dy="11.969999999999999"><tspan x="718.0894651769722" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2014</tspan></text></g><g role="presentation"><line x1="785.5770594532919" x2="785.5770594532919" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="10" scale="[object Object]" x1="785.5770594532919" y1="596" x2="785.5770594532919" y2="606" datum="Thu Jan 01 2015 00:00:00 GMT+0900 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-10" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="785.5770594532919" dx="0" y="611" dy="11.969999999999999"><tspan x="785.5770594532919" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2015</tspan></text></g><g role="presentation"><line x1="853.0685057612485" x2="853.0685057612485" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="11" scale="[object Object]" x1="853.0685057612485" y1="596" x2="853.0685057612485" y2="606" datum="Fri Jan 01 2016 00:00:00 GMT+0830 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-11" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="853.0685057612485" dx="0" y="611" dy="11.969999999999999"><tspan x="853.0685057612485" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2016</tspan></text></g><g role="presentation"><line x1="920.7409975561334" x2="920.7409975561334" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="12" scale="[object Object]" x1="920.7409975561334" y1="596" x2="920.7409975561334" y2="606" datum="Sun Jan 01 2017 00:00:00 GMT+0830 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-12" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="920.7409975561334" dx="0" y="611" dy="11.969999999999999"><tspan x="920.7409975561334" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2017</tspan></text></g><g role="presentation"><line x1="988.228591832453" x2="988.228591832453" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="13" scale="[object Object]" x1="988.228591832453" y1="596" x2="988.228591832453" y2="606" datum="Mon Jan 01 2018 00:00:00 GMT+0830 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-13" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="988.228591832453" dx="0" y="611" dy="11.969999999999999"><tspan x="988.228591832453" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2018</tspan></text></g><g role="presentation"><line x1="1055.7123340771361" x2="1055.7123340771361" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="14" scale="[object Object]" x1="1055.7123340771361" y1="596" x2="1055.7123340771361" y2="606" datum="Tue Jan 01 2019 00:00:00 GMT+0900 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-14" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="1055.7123340771361" dx="0" y="611" dy="11.969999999999999"><tspan x="1055.7123340771361" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2019</tspan></text></g><g role="presentation"><line x1="1123.1999283534558" x2="1123.1999283534558" y1="596" y2="142.4499969482422" role="presentation" shape-rendering="auto" vector-effect="non-scaling-stroke" style="stroke: none; fill: none; pointer-events: painted;"></line><line type="line" index="15" scale="[object Object]" x1="1123.1999283534558" y1="596" x2="1123.1999283534558" y2="606" datum="Wed Jan 01 2020 00:00:00 GMT+0900 (Korean Standard Time)" id="chart-group-8-axis-0-ticks-15" style="fill: rgb(70, 70, 70); size: 10px; stroke: rgb(51, 51, 51); stroke-width: 1;"></line><text direction="inherit" class="x-axis" x="1123.1999283534558" dx="0" y="611" dy="11.969999999999999"><tspan x="1123.1999283534558" dx="0" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 14px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; padding: 5px; stroke: transparent;">2020</tspan></text></g></g></g><g><g><path d="M -2305.191327579123, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.191327576944, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.191327574765, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.1913275725865, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.1913275704082, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.191327568229, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.1913275660504, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.1913275638717, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.191327561693, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.1913275595143, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.191327557336, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.191327555157, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.1913275529782, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.1913275507995, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.1913275486213, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path><path d="M -2305.191327546442, 596
+      m -3, 0
+      a 3, 3 0 1,0 6,0
+      a 3, 3 0 1,0 -6,0" role="presentation" shape-rendering="auto" style="fill: none; stroke: transparent; width: 31px;"></path></g></g><g class=""><text direction="inherit" x="0" dx="0" y="684.59375" dy="11.969999999999999"><tspan x="0" dx="0" text-anchor="start" style="font-size: 14px; font-style: italic; fill: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; stroke: transparent;"></tspan></text></g><g class=""><text direction="inherit" x="0" dx="0" y="684.984375" dy="11.969999999999999"><tspan x="0" dx="0" text-anchor="start" style="font-size: 14px; font-style: italic; fill: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, Helvetica, &quot;Segoe UI&quot;, Arial, sans-serif, sans-serif; stroke: transparent;">https://comic.naver.com/webtoon/period.nhn</tspan></text></g><g class=""><svg viewBox="0 0 1095.08 100.96" height="14" width="150" x="1045" y="680"><path fill="#333333" d="M434.62,161.22a62.21,62.21,0,0,1-7.18,6,49.93,49.93,0,0,1-9,5.13,56.83,56.83,0,0,1-10.9,3.51,59.91,59.91,0,0,1-12.76,1.28,50.1,50.1,0,0,1-17.91-3,33.66,33.66,0,0,1-12.88-8.44,32.68,32.68,0,0,1-7.4-13.16,43.27,43.27,0,0,1-1.32-17A66,66,0,0,1,362,112.48a67.85,67.85,0,0,1,13.92-18.83A64.05,64.05,0,0,1,395.23,81a58.62,58.62,0,0,1,23-4.59,47.21,47.21,0,0,1,20,4q8.63,4,12.57,10.19l-18.16,14.85a17.58,17.58,0,0,0-6.17-6.21q-4.24-2.7-11-2.7a29.88,29.88,0,0,0-13.35,3,38,38,0,0,0-11,8.1,43.41,43.41,0,0,0-7.83,11.61,42.38,42.38,0,0,0-3.78,13.57,26.55,26.55,0,0,0,.58,9.25,19.31,19.31,0,0,0,3.72,7.63,18.26,18.26,0,0,0,6.82,5.13,23.77,23.77,0,0,0,9.86,1.89,29.44,29.44,0,0,0,12.3-2.7,35.27,35.27,0,0,0,10.8-7.69Z" transform="translate(-9.89 -76.19)"></path><path fill="#333333" d="M505.71,174.58l11.23-40.23H479.82l-11.37,40.23H446L472.93,79h22.41l-10.28,36.31h37.26L532.46,79H555l-26.89,95.58Z" transform="translate(-9.89 -76.19)"></path><path fill="#333333" d="M617.49,174.58l-1.25-19H579.39l-13.47,19H540.27L611.16,79H633l8.08,95.58Zm-3.09-71-23.53,33.89h25Z" transform="translate(-9.89 -76.19)"></path><path fill="#333333" d="M734.39,174.58H709l-12-38.48H687.8l-10.51,38.48H655.42L682.31,79H715q15.79,0,23.94,6.68t6.89,18.7q-1.22,11.61-8.33,19a36.76,36.76,0,0,1-18.2,10.06Zm-31.94-54.67q9,0,14.35-3a11.45,11.45,0,0,0,6-9.39q.62-5.9-3.34-8.05t-11-2.15h-9.59l-6.41,22.54Z" transform="translate(-9.89 -76.19)"></path><path fill="#333333" d="M808.13,98.31l-21.49,76.27H764.23l21.35-76.27H758.85L764.38,79h75.33l-5.4,19.3Z" transform="translate(-9.89 -76.19)"></path><path fill="#333333" d="M897.22,102.23A15,15,0,0,0,891,96.69a19.86,19.86,0,0,0-8.85-1.89,21.85,21.85,0,0,0-4.92.61,15.61,15.61,0,0,0-4.87,2,14.8,14.8,0,0,0-3.88,3.58,10.28,10.28,0,0,0-2,5.27,6.81,6.81,0,0,0,2.5,6.41,30.15,30.15,0,0,0,8.38,4.39A66.81,66.81,0,0,1,888,121.87a30.45,30.45,0,0,1,7.61,6,20.28,20.28,0,0,1,4.33,7.63,24.17,24.17,0,0,1,.74,9.65,31.05,31.05,0,0,1-5.12,14.71,35.67,35.67,0,0,1-10.29,9.92,44.13,44.13,0,0,1-13.28,5.6,59.49,59.49,0,0,1-14.09,1.76,55.07,55.07,0,0,1-10.16-.94,50.56,50.56,0,0,1-9.56-2.77,35.8,35.8,0,0,1-8.29-4.66,27,27,0,0,1-6.21-6.48l18-13.5a17.49,17.49,0,0,0,7.64,7,23.57,23.57,0,0,0,10.92,2.7,27.61,27.61,0,0,0,5.8-.61,16.27,16.27,0,0,0,5.14-2,12.47,12.47,0,0,0,3.82-3.65,11.43,11.43,0,0,0,1.84-5.33,8.27,8.27,0,0,0-3.22-7.9,36.91,36.91,0,0,0-10.26-5.2,67.33,67.33,0,0,1-8.46-3.64,23.75,23.75,0,0,1-6.63-5,19.57,19.57,0,0,1-4.12-7.09,23.41,23.41,0,0,1-.78-9.92A30.6,30.6,0,0,1,847.82,95a35.12,35.12,0,0,1,9.35-10,43.87,43.87,0,0,1,12.95-6.34,51.5,51.5,0,0,1,15.22-2.23,44.72,44.72,0,0,1,8.42.81,42.65,42.65,0,0,1,8.06,2.36,32.39,32.39,0,0,1,7,3.85,21,21,0,0,1,5.12,5.27Z" transform="translate(-9.89 -76.19)"></path><path fill="#333333" d="M53.53,98.17l-5.78,20.39H83.53l-5.18,18.49H42.57L32,174.58H9.89L36.77,79H96.85L91.47,98.17Z" transform="translate(-9.89 -76.19)"></path><path fill="#333333" d="M146.59,174.58l-1.25-19H108.49L95,174.58H69.37L140.27,79h21.87l8.08,95.58Zm-3.09-71L120,137.46h25Z" transform="translate(-9.89 -76.19)"></path><path fill="#333333" d="M254.93,102.23a15,15,0,0,0-6.17-5.53,19.84,19.84,0,0,0-8.85-1.89,21.93,21.93,0,0,0-4.92.61,15.6,15.6,0,0,0-4.87,2,14.78,14.78,0,0,0-3.88,3.58,10.27,10.27,0,0,0-2,5.27,6.8,6.8,0,0,0,2.5,6.41,30.13,30.13,0,0,0,8.38,4.39,66.79,66.79,0,0,1,10.57,4.79,30.49,30.49,0,0,1,7.61,6,20.3,20.3,0,0,1,4.33,7.63,24.18,24.18,0,0,1,.74,9.65,31,31,0,0,1-5.12,14.71A35.63,35.63,0,0,1,243,169.79a44.14,44.14,0,0,1-13.28,5.6,59.41,59.41,0,0,1-14.09,1.76,55.06,55.06,0,0,1-10.16-.94,50.68,50.68,0,0,1-9.57-2.77,35.86,35.86,0,0,1-8.29-4.66,27.05,27.05,0,0,1-6.21-6.48l18-13.5a17.48,17.48,0,0,0,7.64,7,23.57,23.57,0,0,0,10.92,2.7,27.62,27.62,0,0,0,5.8-.61,16.26,16.26,0,0,0,5.14-2,12.49,12.49,0,0,0,3.82-3.64,11.44,11.44,0,0,0,1.84-5.33,8.26,8.26,0,0,0-3.22-7.9,36.87,36.87,0,0,0-10.26-5.2,67.3,67.3,0,0,1-8.46-3.65,23.68,23.68,0,0,1-6.63-5,19.59,19.59,0,0,1-4.12-7.09,23.43,23.43,0,0,1-.78-9.92A30.57,30.57,0,0,1,205.54,95a35.11,35.11,0,0,1,9.35-10,44,44,0,0,1,12.95-6.35,51.53,51.53,0,0,1,15.22-2.23,44.72,44.72,0,0,1,8.42.81,42.6,42.6,0,0,1,8.06,2.36,32.38,32.38,0,0,1,7,3.85,21.09,21.09,0,0,1,5.12,5.27Z" transform="translate(-9.89 -76.19)"></path><path fill="#333333" d="M329.92,98.31l-21.49,76.27H286l21.35-76.27H280.64L286.17,79H361.5l-5.4,19.3Z" transform="translate(-9.89 -76.19)"></path><path fill="#333333" d="M934.7,161.91a14.63,14.63,0,0,1-1.61,5.26,16.94,16.94,0,0,1-3.25,4.31,14.54,14.54,0,0,1-4.58,3,14.17,14.17,0,0,1-5.45,1.08q-5.53,0-8.61-3.17a9.7,9.7,0,0,1-2.5-8.29,15.07,15.07,0,0,1,5-9.84,14.72,14.72,0,0,1,10.15-3.91,10.8,10.8,0,0,1,8.32,3.3A10,10,0,0,1,934.7,161.91Z" transform="translate(-9.89 -76.19)"></path><path fill="#333333" d="M1060.3,76.19a57.66,57.66,0,0,1,19.24,3,38.46,38.46,0,0,1,14.2,8.55,35.53,35.53,0,0,1,8.63,13.43,45.76,45.76,0,0,1,2.56,17.5,64.22,64.22,0,0,1-4.91,22.87,59.76,59.76,0,0,1-12.18,18.59,56.14,56.14,0,0,1-18.17,12.48,56.87,56.87,0,0,1-22.88,4.54,58.72,58.72,0,0,1-19.45-3,39,39,0,0,1-14.33-8.55,35.06,35.06,0,0,1-8.7-13.43,45.71,45.71,0,0,1-2.56-17.5,63.28,63.28,0,0,1,5-22.87,59.44,59.44,0,0,1,12.38-18.59,57.69,57.69,0,0,1,18.3-12.48A56.84,56.84,0,0,1,1060.3,76.19Zm-11.58,80.6a29,29,0,0,0,13.39-3.05,32.08,32.08,0,0,0,10.2-8.14,38.86,38.86,0,0,0,6.61-11.67,43.89,43.89,0,0,0,2.63-13.5,26.76,26.76,0,0,0-1.29-9.43,21.47,21.47,0,0,0-4.38-7.67,20.47,20.47,0,0,0-7.44-5.16,26.43,26.43,0,0,0-10.32-1.9,28.19,28.19,0,0,0-13.25,3.12,33.72,33.72,0,0,0-10.26,8.21,39.31,39.31,0,0,0-6.74,11.6,42,42,0,0,0-2.69,13.43,26.74,26.74,0,0,0,1.29,9.43,20.92,20.92,0,0,0,4.45,7.67,21.21,21.21,0,0,0,7.44,5.16A26.24,26.24,0,0,0,1048.73,156.8Z" transform="translate(-9.89 -76.19)"></path><path fill="#333333" d="M971.45,174.58H949L975.93,79h22.41Z" transform="translate(-9.89 -76.19)"></path></svg></g></svg>
